@@ -16,7 +16,8 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
         clientID: keys.googleClientID,
         clientSecret: keys.googleClientSecret,
-        callbackURL: "http://localhost:5000/auth/google/callback"
+        callbackURL: "http://localhost:5000/auth/google/callback",
+        proxy: true
     },
     (accessToken, refreshToken, profile, done) => {
         /* console.log('accessToken',accessToken)*/
